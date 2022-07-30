@@ -35,11 +35,9 @@ def dataCollect():
     print("Data Collection\t")
     print(collectmenu)
     collectoption = takeInput()
-    if collectoption == 1:
-        None # todo 
-    elif collectoption == 2:
-        print("Data Collection\t")  #todo 
-
+    if collectoption == 3:
+        None
+    # .....  not completed yet 
 
 def dataManipulate():
     
@@ -54,6 +52,7 @@ def dataManipulate():
     print("Data Manipulation on SQL\t")
     print(manipulatemenu)
     manipulateoption = takeInput()
+    # .....  not completed yet
    
 
 def dataAnalysis():
@@ -68,6 +67,7 @@ def dataAnalysis():
     print("Data Analysis\t")
     print(analysisemenu)
     analyseoption = takeInput()
+    # .....  not completed yet
 
 
 def dataVisual():
@@ -81,7 +81,7 @@ def dataVisual():
     print("Data Visualization\t")
     print(visualmenu)
     visualoption = takeInput()
-  
+    # .....  not completed yet
 
 def csv():
     csvmenu = '''
@@ -91,7 +91,7 @@ def csv():
     print("Data Collection\t")
     print(csvmenu)
     csvoption = takeInput()
-
+    # .....  not completed yet
 
   
 

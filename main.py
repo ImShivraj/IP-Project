@@ -1,5 +1,7 @@
 #ip project 
+import pandas as pd
 
+df = pd.read_csv('data.csv',encoding='latin-1')
 def takeInput():
     inp = int(input("Enter your preferred option: "))
     return inp
@@ -37,6 +39,9 @@ def dataCollect():
     collectoption = takeInput()
     if collectoption == 3:
         None
+    elif collectoption == 2:
+        df = pd.read_csv('data.csv',encoding='latin-1')
+        print(df)
     # .....  not completed yet 
 
 def dataManipulate():
@@ -67,6 +72,14 @@ def dataAnalysis():
     print("Data Analysis\t")
     print(analysisemenu)
     analyseoption = takeInput()
+    if analyseoption == 1:
+        inp = int(input("Enter the number of rows you want: "))
+        df_top= df.head(inp)
+        print(df_top)
+    elif analyseoption == 2:
+        inp = int(input("Enter the number of rows you want: "))
+        df_bottom= df.tail(inp)
+        print(df_bottom)
     # .....  not completed yet
 
 

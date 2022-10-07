@@ -1,6 +1,7 @@
 #ip project 
 import pandas as pd
 
+
 df = pd.read_csv('data.csv',encoding='latin-1')
 def takeInput():
     inp = int(input("Enter your preferred option: "))
@@ -42,7 +43,15 @@ def dataCollect():
     elif collectoption == 2:
         df = pd.read_csv('data.csv',encoding='latin-1')
         print(df)
-    # .....  not completed yet 
+        
+    # elif collectoption == 1:
+
+    #     a = sql.connect (host = "localhost", user = "root", password = " ")
+    #     cursor = a.cursor ()
+    #     cursor.execute ("create database project")
+
+
+    # .....  not complete d yet 
 
 def dataManipulate():
     
@@ -80,6 +89,12 @@ def dataAnalysis():
         inp = int(input("Enter the number of rows you want: "))
         df_bottom= df.tail(inp)
         print(df_bottom)
+
+    elif analyseoption == 3:
+        inp = int(input("Enter the particular row number of the row you want to display: "))
+        part_row = df.iloc[inp, :]
+        print(part_row)
+
     # .....  not completed yet
 
 

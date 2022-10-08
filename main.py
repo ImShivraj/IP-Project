@@ -3,6 +3,7 @@ import pandas as pd
 
 
 df = pd.read_csv('data.csv',encoding='latin-1')
+
 def takeInput():
     inp = int(input("Enter your preferred option: "))
     return inp
@@ -95,7 +96,44 @@ def dataAnalysis():
         part_row = df.iloc[inp, :]
         print(part_row)
 
-    # .....  not completed yet
+    elif analyseoption == 4 :
+        conditions = '''
+    Choose one of the options from the following [1] or [2] or [3] or [4] \n\n
+    1. Select rows on basis of index no. \n
+    2. Select rows on the basis of year \n
+    3. Select rows on the basis of Country \n
+    4. Select rows on the basis of Sport \n
+    '''
+        print(conditions)
+        condition_inp = takeInput()
+        if condition_inp == 1:
+            inp1 = int(input("Please enter the starting index no.: "))
+            inp2 = int(input("Please enter the ending index no.: "))
+
+            index_df = df.iloc[inp1:inp2+1 , : ]
+            print(index_df)
+
+        elif condition_inp == 2:
+            year_df = df['Year']
+            print(year_df)
+
+        elif condition_inp == 3:
+            count_df = df['Country']
+            print(count_df)
+
+        elif condition_inp == 4:
+            sport_df = df['Sport']
+            print(sport_df)
+
+        else:
+            print("Please enter a valid option!")
+
+    elif analyseoption == 5:
+        None
+
+    else:
+        print("Please enter a valid option!")
+   
 
 
 def dataVisual():
@@ -109,6 +147,19 @@ def dataVisual():
     print("Data Visualization\t")
     print(visualmenu)
     visualoption = takeInput()
+
+    if visualmenu == 1:
+        visualmenu = '''
+    Choose one of the options from the following [1] or [2] or [3] \n\n
+    1. Year vs Countries \n
+    2. Year vs Medal \n
+    3. Country vs Gender \n
+    
+    '''
+        lineoptions = takeInput()
+        
+
+
     # .....  not completed yet
 
 def csv():

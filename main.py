@@ -1,6 +1,7 @@
 #ip project 
 import pandas as pd
-
+import matplotlib.pyplot as plt
+import sql
 
 df = pd.read_csv('data.csv',encoding='latin-1')
 
@@ -45,11 +46,11 @@ def dataCollect():
         df = pd.read_csv('data.csv',encoding='latin-1')
         print(df)
         
-    # elif collectoption == 1:
+    elif collectoption == 1:
 
-    #     a = sql.connect (host = "localhost", user = "root", password = " ")
-    #     cursor = a.cursor ()
-    #     cursor.execute ("create database project")
+        a = sql.connect (host = "localhost", user = "root", password = " ")
+        cursor = a.cursor ()
+        cursor.execute ("create database project")
 
 
     # .....  not complete d yet 
@@ -148,16 +149,48 @@ def dataVisual():
     print(visualmenu)
     visualoption = takeInput()
 
-    if visualmenu == 1:
-        visualmenu = '''
+    if visualoption == 1:
+        linemenu = '''
     Choose one of the options from the following [1] or [2] or [3] \n\n
-    1. Year vs Countries \n
+    1. Year vs Country \n
     2. Year vs Medal \n
     3. Country vs Gender \n
     
     '''
+        print(linemenu)
         lineoptions = takeInput()
-        
+        if lineoptions == 1:
+            plt.plot(df["Year"], df["Country"])
+            plt.show()
+
+        elif lineoptions == 2:
+            plt.plot(df["Year"], df["Medal"])
+            plt.show()
+
+        elif lineoptions == 3:
+            plt.plot(df["Country"], df["Gender"])
+
+    elif visualoption == 2:
+        barmenu = '''
+    Choose one of the options from the following [1] or [2] or [3] \n\n
+    1. Year vs Country \n
+    2. Year vs Medal \n
+    3. Country vs Gender \n
+    '''
+        print(barmenu)
+        baroptions = takeInput()
+        if baroptions ==1:
+            plt.bar(df["Year"], df["Country"])
+            plt.show()
+
+        elif baroptions ==1:
+            plt.bar(df["Year"], df["Medal"])
+            plt.show()
+
+        elif baroptions ==1:
+            plt.bar(df["Country"], df["Gender"])
+            plt.show()
+
 
 
     # .....  not completed yet

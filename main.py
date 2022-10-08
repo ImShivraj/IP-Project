@@ -183,27 +183,57 @@ def dataVisual():
             plt.bar(df["Year"], df["Country"])
             plt.show()
 
-        elif baroptions ==1:
+        elif baroptions ==2:
             plt.bar(df["Year"], df["Medal"])
             plt.show()
 
-        elif baroptions ==1:
+        elif baroptions ==3:
             plt.bar(df["Country"], df["Gender"])
             plt.show()
 
+    elif visualoption == 3:
+        hismenu = '''
+    Choose one of the options from the following [1] or [2] or [3] \n\n
+    1. Countries \n
+    2. Medals \n
+    3. Genders \n
+    '''
+        print(hismenu)
+        hisoptions = takeInput()
+        if hisoptions ==1:
+            plt.hist(df["Country"])
+            plt.show()
 
+        elif hisoptions ==2:
+            plt.hist(df["Medal"])
+            plt.show()
 
-    # .....  not completed yet
+        elif hisoptions ==3:
+            plt.hist(df["Gender"])
+            plt.show()
+
+    elif visualoption == 4:
+        None
+
+    else:
+        print("Please enter a valid option!")
+
 
 def csv():
     csvmenu = '''
-    Choose one of the options from the following [1]  \n\n
-    1. Transfer the changes back to csv \n
+    Your data has been exported!!
     '''
-    print("Data Collection\t")
     print(csvmenu)
-    csvoption = takeInput()
-    # .....  not completed yet
+    inpyes = input("Do you want to see it ? [y]/[n]")
+    if inpyes.lower() == 'y':
+        print(df)
+
+    elif inpyes.lower() == 'n':
+        None
+
+    else:
+        print("Please enter a valid option!")
+    
 
   
 
@@ -212,7 +242,6 @@ if __name__ == '__main__':
 
     while True:
         intro()
-        # option1 = int(input("Enter your preferred option: "))
         option1 = takeInput()
 
         if option1 == 1: 
